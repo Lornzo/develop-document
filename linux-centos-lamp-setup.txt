@@ -1,0 +1,71 @@
+# Centos LAMP Server 環境設定
+
+* **更新作業系統**
+  * yum -y update
+  * yum -y upgrade
+
+* **安裝並設定防火牆** 
+  * yum -y install firewalld
+  * yum -y install epel-release
+  * systemctl start firewalld
+  * systemctl enable firewalld
+  * systemctl status firewalld
+  * firewall-cmd --permanent --add-port=80/tcp
+  * firewall-cmd --permanent --add-port=22/tcp
+  * firewall-cmd --permanent --remove-service=dhcpv6-client
+  * firewall-cmd --reload
+  * firewall-cmd --list-all
+
+* **安裝Openssh**
+  * yum -y install openssh-server
+  * systemctl start sshd
+  * systemctl enable sshd
+  * systemctl status sshd
+
+* **設定外部SSH連線進來所需要的密碼**
+  * passwd {account}
+
+* **安裝並設定防爆牆**
+  * yum -y install fail2ban
+  * systemctl start fail2ban
+  * systemctl enable fail2ban
+  * systemctl status fail2ban
+
+* **安裝Apache**
+  * yum -y install httpd
+  * systemctl start httpd.service
+  * systemctl enable httpd.service
+
+* **安裝wget**
+  * yum -y install wget
+
+* **安裝MySQL8**
+  * wget https://dev.mysql.com/get/mysql80-community-release-el7-3.noarch.rpm
+  * rpm -ivh mysql80-community-release-el7-3.noarch.rpm
+  * yum clean all && yum makecache
+  * yum install -y  mysql-community-server
+  * 設定MySQL(非必要)
+    * vi /etc/my.cnf
+  * systemctl start mysqld
+  * systemctl enable mysqld
+  * systemctl daemon-reload
+  * 查看MySQL預設密碼
+    * grep "A temporary password" /var/log/mysqld.log
+  * 用預設密碼進入Mysql
+    * mysql -u root -p
+  * 修改預設密碼
+    * ALTER USER 'root'@'localhost' IDENTIFIED BY '密碼在這裡';
+
+* **安裝PHP7**
+  * yum install epel-release (前面如果已經安裝可略過)
+  * yum -y install https://rpms.remirepo.net/enterprise/remi-release-7.rpm
+  * yum -y install yum-utils
+  * yum repolist all |grep php
+  * yum-config-manager --enable remi-php74
+  * yum -y install php php-cli php-fpm php-mysqlnd php-zip php-devel php-gd php-mcrypt php-mbstring php-curl php-xml php-pear php-bcmath php-json php-redis
+
+* **查看可以用的php modules**
+  * php --modules
+
+* **安裝php modules**
+  * yum -y install php-{module名稱}
