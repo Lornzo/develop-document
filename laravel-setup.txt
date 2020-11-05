@@ -1,0 +1,22 @@
+# Laravel專案安裝
+
+* **安裝Laravel所需要的php modules**
+  * yum -y install php-bcmath php-ctype php-fileinfo php-json php-mbstring php-openssl php-pdo php-tokenizer php-xml
+
+* **安裝composer 2**
+  * php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+  * php composer-setup.php --install-dir=/usr/local/bin --filename=composer
+
+* **安裝Laravel專案**
+  * composer create-project --prefer-dist laravel/laravel {專案名稱}
+
+* **打開laravel專案需要的檔案權限
+  * chmod 777 -R /storage
+  * chmod 777 -R /bootstrap/cache
+
+* **安裝Laravel-Admin**
+  * 設定資料庫連線 /.env 
+  * composer require encore/laravel-admin:1.*
+  * php artisan vendor:publish --provider="Encore\Admin\AdminServiceProvider"
+  * php artisan admin:install
+  * http://url/admin 預設帳號密碼階為 admin / admin
