@@ -1,1 +1,16 @@
-##aa
+SSH存取設定：
+
+1. 先在本機上面產出公私鑰
+ssh-keygen -t rsa -f ~/.ssh/{keyname}_rsa -C "{email}"
+
+2. 取出公鑰串並上傳到github / gitlab
+vim ~/.ssh/{keyname}_rsa.pub
+
+3. 切換私鑰
+ssh-add ~/.ssh.{keyname}_rsa
+
+4. 正常對遠端庫作存取
+
+進階使用：
+~/.ssh/config (待查)
+資料：https://linuxize.com/post/using-the-ssh-config-file/
