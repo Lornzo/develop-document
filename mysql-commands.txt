@@ -1,0 +1,15 @@
+# MySQL常用到的命令
+
+* **新增資料庫與使用者，並設定權限**
+  * 建立資料庫
+    * CREATE DATABASE '{database name}';
+  * 建立使用者帳號密碼
+    * CREATE USER '{user}'@'localhost' IDENTIFIED WITH mysql_native_password BY '{密碼}'; (MySql8以上)
+    * CREATE USER '{user}'@'localhost' IDENTIFIED BY '{密碼}';
+  * 為新建的使用者帳號
+    * GRANT ALL PRIVILEGES ON {database name}.* TO '{user}'@'localhost'; (單一資料庫權限)
+    * GRANT ALL PRIVILEGES ON *.* TO '{user}'@'localhost'; (所有資料庫權限)
+  * 更新權限
+    * FLUSH PRIVILEGES;
+
+
