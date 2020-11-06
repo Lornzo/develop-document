@@ -1,0 +1,19 @@
+# Apache2 安裝與設定
+
+## 安裝Apache2
+
+* Ubuntu
+
+* Centos
+  * yum -y install httpd
+  * systemctl start httpd.service
+  * systemctl enable httpd.service
+
+## 設定預設DocumentRoot
+
+* Ubuntu
+
+* Centos
+  * vim /etc/httpd/conf/httpd.conf
+
+## 設定Vitrul Hosts
