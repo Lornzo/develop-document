@@ -1,8 +1,13 @@
 # Centos LAMP Server 環境設定
 
+## Linux 作業環境
+
 * **更新作業系統**
   * yum -y update
   * yum -y upgrade
+
+* **安裝常用工具**
+  * yum -y install wget zip unzip curl vim
 
 * **安裝並設定防火牆** 
   * yum -y install firewalld
@@ -30,6 +35,8 @@
   * systemctl start fail2ban
   * systemctl enable fail2ban
   * systemctl status fail2ban
+
+## LAMP 架設 - 散裝
 
 * **安裝Apache**
   * yum -y install httpd
@@ -69,3 +76,21 @@
 
 * **安裝php modules**
   * yum -y install php-{module名稱}
+
+## LAMP 架設 - XAMPP
+
+* ** 安裝 XAMPP**
+  * wget https://www.apachefriends.org/xampp-files/7.3.23/xampp-linux-x64-7.3.23-0-installer.run
+  * chkmod +x xampp-linux-x64-7.3.23-0-installer.run
+  * ./xampp-linux-x64-7.3.23-0-installer.run
+
+* **設定執行連結**
+  * ln -s /opt/lampp/bin/php /usr/bin/php
+  * ls -s /opt/lampp/bin/mysql /usr/bin/mysql
+
+* **啟動xampp**
+  * /opt/lampp/lampp start
+
+## 安裝Composer2
+* php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+* php composer-setup.php --install-dir=/usr/local/bin --filename=composer
