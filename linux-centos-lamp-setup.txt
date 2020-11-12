@@ -86,7 +86,7 @@
 
 * **設定執行連結**
   * ln -s /opt/lampp/bin/php /usr/bin/php
-  * ls -s /opt/lampp/bin/mysql /usr/bin/mysql
+  * ln -s /opt/lampp/bin/mysql /usr/bin/mysql
 
 * **啟動xampp**
   * /opt/lampp/lampp start

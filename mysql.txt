@@ -1,6 +1,6 @@
 # MySQL常用到的命令
 
-* **新增資料庫與使用者，並設定權限**
+## 新增資料庫與使用者，並設定權限
   * 建立資料庫
     * CREATE DATABASE '{database name}';
   * 建立使用者帳號密碼
@@ -12,4 +12,5 @@
   * 更新權限
     * FLUSH PRIVILEGES;
 
-
+## 匯出資料庫
+* mysqldump dbname > c:mydb.sql -u root -p

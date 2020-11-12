@@ -1,5 +1,11 @@
 # GIT 常用指令與功能
 
+## 本機設定使用者帳號跟名稱
+* 設定使用者帳號
+  * git config --global user.email "id@example.comd"
+* 設定使用者名稱
+  * git config --global user.name "your name"
+
 ## SSH 連線 GitHub 或是 GitLab
 
 * 先在本機上產出公私鑰
