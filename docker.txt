@@ -1,0 +1,7 @@
+# Docker
+
+## 安裝
+*
+
+## Container
+* sudo docker run -dit --name laravel-test -p 10080:80 -v /opt/laravel-test:/opt/lampp/htdocs/laravel-test --privileged=true ubuntu:18.04 /bin/bash
