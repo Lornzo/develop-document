@@ -24,6 +24,13 @@
 * php artisan admin:install
 * http://url/admin 預設帳號密碼階為 admin / admin
 
+## 新增laravel-Admin圖片驗証
+
+* composer require james.xue/login-captcha
+* php artisan vendor:publish --tag=lang
+* vim project_dist/config/admin.php
+  * 'extensions' => array('login-captcha'=>array('enable'=>true));
+
 ## 切換前端JS Framework 至 React
 
 * 從vue切換到react
