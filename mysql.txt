@@ -14,3 +14,9 @@
 
 ## 匯出資料庫
 * mysqldump dbname > c:mydb.sql -u root -p
+
+## 匯入資料庫
+* mysql -u root -p 登入資料庫
+* use {database name}; 選擇要操作的資料庫
+* set names utf8; 指定utf8讀取
+* source {.sql file path}; 匯入
