@@ -34,11 +34,12 @@
 ## 切換前端JS Framework 至 React
 
 * 從vue切換到react
-  * php artisan preset react
+  * composer require laravel/ui
+  * php artisan ui react
 
 * 安裝node模組
   * npm install
-
+  
 * 安裝相依模組
   * npm install react-router
   * npm install react-router-dom
